@@ -139,7 +139,7 @@ class _DayPickerState extends State<_DayPicker> {
     final int dayOffset = getMonthFirstDayOffset(year, month,
         widget.config.firstDayOfWeek ?? localizations.firstDayOfWeekIndex);
 
-    final List<Widget> dayItems = _dayHeaders(headerStyle, localizations);
+    final List<Widget> dayItems = [];
     if (widget.config.calendarViewMode == CalendarDatePicker2Mode.scroll &&
         widget.config.hideScrollViewMonthWeekHeader == true) {
       dayItems.clear();
@@ -377,10 +377,8 @@ class _DayPickerState extends State<_DayPicker> {
       }
     }
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: _monthPickerHorizontalPadding,
-      ),
+    return ColoredBox(
+      color: Colors.red,
       child: GridView.custom(
         padding: EdgeInsets.zero,
         physics: const ClampingScrollPhysics(),
