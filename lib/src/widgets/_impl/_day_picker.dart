@@ -377,19 +377,16 @@ class _DayPickerState extends State<_DayPicker> {
       }
     }
 
-    return ColoredBox(
-      color: Colors.red,
-      child: GridView.custom(
-        padding: EdgeInsets.zero,
-        physics: const ClampingScrollPhysics(),
-        gridDelegate: _DayPickerGridDelegate(
-          config: widget.config,
-          dayRowsCount: widget.dayRowsCount,
-        ),
-        childrenDelegate: SliverChildListDelegate(
-          dayItems,
-          addRepaintBoundaries: false,
-        ),
+    return GridView.custom(
+      padding: EdgeInsets.zero,
+      physics: const ClampingScrollPhysics(),
+      gridDelegate: _DayPickerGridDelegate(
+        config: widget.config,
+        dayRowsCount: widget.dayRowsCount,
+      ),
+      childrenDelegate: SliverChildListDelegate(
+        dayItems,
+        addRepaintBoundaries: false,
       ),
     );
   }
